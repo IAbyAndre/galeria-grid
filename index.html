@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0d0d0d;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: block;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Imágenes destacadas (más grandes) */
+        .gallery img:nth-child(3) {
+            grid-row: span 2;
+            grid-column: span 2;
+        }
+
+        .gallery img:nth-child(7) {
+            grid-row: span 2;
+        }
+
+        .gallery img:nth-child(10) {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .gallery img:nth-child(3),
+            .gallery img:nth-child(7),
+            .gallery img:nth-child(10) {
+                grid-row: span 1;
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="https://picsum.photos/seed/1/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/2/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/3/600/600" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/4/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/5/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/6/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/7/300/600" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/8/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/9/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/10/600/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/11/400/300" alt="" loading="lazy" />
+        <img src="https://picsum.photos/seed/12/400/300" alt="" loading="lazy" />
+    </div>
+</body>
+</html>
